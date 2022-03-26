@@ -59,6 +59,7 @@ namespace LINQ_Excercises
 
             var q5 = from singer in _singers
                      join concert in _concerts on singer.Id equals concert.SingerId
+                     where singer.FirstName.Equals("Elvis") && singer.LastName.Equals("Presley")
                      where concert.Country.Equals("Germany")
                      where concert.Year >= 1950 && concert.Year <= 1980
                      select concert.Avenue;
