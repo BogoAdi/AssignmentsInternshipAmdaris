@@ -9,19 +9,22 @@ namespace LINQ_Excercises
             //First Excercises
             Console.WriteLine("Ex1:");
             var array = new int[] { 8, 2, 3, 3, 5, 6, 5, 8, 9, 10, 1, 12, 2, 2, 25, 8, 16, 2 };
-            var distinctarray = array.Distinct();
+            //var distinctarray = array.Distinct();
 
             //var t = array.Count(x => x.Equals(array.ElementAt(1)));
-            var ex1 = distinctarray.ToDictionary(x => x, y => array.Count(z => z == y));
-            foreach (var item in ex1)
+            // var ex1 = array.ToDictionary(, array.GroupBy(x => x).Count(w3));
+            
+            var q= array.GroupBy(x=>x);
+            foreach (var item in q)
             {
-                Console.WriteLine(item);
+                Console.Write(item.Key );
+                Console.WriteLine(": " + item.Count());
             }
             Console.WriteLine();
 
             //Excercises 2
             Console.WriteLine("Ex2:");
-            var m = array.MaxBy(y => array.Count(z => z == y));
+            var m = array.MaxBy(x => array.Count(y => y == x));
             Console.WriteLine(m);
             Console.WriteLine();
 
