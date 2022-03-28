@@ -24,8 +24,8 @@ namespace LINQ_Excercises
 
             //Excercises 2
             Console.WriteLine("Ex2:");
-            var m = array.MaxBy(x => array.Count(y => y == x));
-            Console.WriteLine(m);
+            var qr = array.GroupBy(x => x).MaxBy(x=>x.Count());
+            Console.WriteLine(qr.Key)
             Console.WriteLine();
 
             //Excercises 3
